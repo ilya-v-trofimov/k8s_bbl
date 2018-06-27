@@ -9,8 +9,8 @@ const host = 'localhost';
 // App
 const app = express();
 app.get('/', (req, res) => {
-    res.send('Hello world\n');
+    res.send('Hello, k8s BBL!\n');
 });
 
 app.listen(port, host);
-console.log(`Running Express server on http://${port}:${port}`);
+console.log(`Running Express server on http://${host}:${port}`);

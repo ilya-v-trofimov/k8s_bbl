@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demoserver
+  labels:
+    app: demoserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demoserver
+  template:
+    metadata:
+      labels:
+        app: demoserver
+    spec:
+      containers:
+      - name: demoserver
+        image: ilyavtrofimov/demoserver
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1000Mi
+          requests:
+            cpu: 1000m
+            memory: 1000Mi
